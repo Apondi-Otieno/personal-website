@@ -10,3 +10,10 @@ from PIL import Image
 from .forms import UpdateProfile,CreateBlog
 from ..email import mail_message
 
+#Views
+@main.route('/')
+def index():
+    quote = get_quote()
+   
+    blogs=Blog.query.all()
+    return render_template('index.html',quote = quote,blogs=blogs)
