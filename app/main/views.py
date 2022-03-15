@@ -17,3 +17,15 @@ def index():
    
     blogs=Blog.query.all()
     return render_template('index.html',quote = quote,blogs=blogs)
+
+@main.route('/profile/<name>',methods = ['POST','GET'])
+@login_required
+def profile(name):
+    user = User.query.filter_by(username = name).first()
+    if 'photo' in request.files:
+        filename = photos.save(request.files['photo'])
+        path = f'photos/{filename}'
+        user.profile_pic_path = path
+        db.session.commit()
+
+    return render_template('profile/profile.html',user = user)
