@@ -29,3 +29,20 @@ def profile(name):
         db.session.commit()
 
     return render_template('profile/profile.html',user = user)
+
+@main.route('/user/<name>/updateprofile', methods = ['POST','GET'])
+@login_required
+def updateprofile(name):
+    user = User.query.filter_by(username = name).first()
+    form = UpdateProfile()
+    if form.validate_on_submit():
+        user.username = form.username.data
+        user.email = form.email.data
+        user.bio = form.bio.data
+        db.session.commit()
+        return redirect(url_for('main.profile',name=user.username,))
+    elif request.method == 'GET':
+        form.username.data = current_user.username
+        form.email.data = current_user.email
+        form.bio.data = current_user.bio
+    return render_template('profile/update.html', user = user, form =form)
