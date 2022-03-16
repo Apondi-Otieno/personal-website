@@ -65,3 +65,12 @@ def new_blog():
    
 
     return render_template('post.html', form = form)
+
+
+@main.route('/blog/<id>')
+@login_required
+def blog(id):
+    comments = Comment.query.filter_by(blog_id=id).all()
+    blog = Blog.query.get(id)
+    return render_template('blog_page.html',blog=blog,comments=comments)
+    
