@@ -8,6 +8,7 @@ Apondi Otieno
 This is an application that allows users to share their thoughts and ideas on various things.
 
 # Technologies Used
+
 -Python
 -Postgres
 -Flask
