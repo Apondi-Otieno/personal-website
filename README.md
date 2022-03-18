@@ -26,3 +26,6 @@ This is an application that allows users to share their thoughts and ideas on va
 Incase of any errors, reach me at apondioti@gmail.com
 
 # License
+MIT License
+
+Copyright (c) 2022 Apondi Otieno
