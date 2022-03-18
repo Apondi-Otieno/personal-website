@@ -9,17 +9,17 @@ This is an application that allows users to share their thoughts and ideas on va
 
 # Technologies Used
 
--Python
--Postgres
--Flask
--Heroku
+- Python
+- Postgres
+- Flask
+- Heroku
 
 # Set-up Process
 
--Install the Visual studio code.
--Git clone the repository.
--Make sure the live server extension is installed.
--Click on Go live.
+- Install the Visual studio code.
+- Git clone the repository.
+- Make sure the live server extension is installed.
+- Click on Go live.
 
 # Live Link
 
